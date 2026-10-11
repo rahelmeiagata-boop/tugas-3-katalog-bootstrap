@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi MasaLalu | Katalog Coffee Shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <section class="container">
+                <a class="navbar-brand" href="#home">Kopi MasaLalu<span>.</span></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#categories">Kategori</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <button class="btn cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                <i class="bi bi-cart3"></i>
+                                <span class="cart-count" id="cartCount">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <article class="container hero-content">
+                <p class="hero-label fade-in-up">COFFEE • FOOD • GOOD MOOD</p>
+                <h1 class="fade-in-up delay-1">Temukan kopi favoritmu<br><span>di Kopi MasaLalu.</span></h1>
+                <p class="hero-text fade-in-up delay-2">Nikmati pilihan kopi, minuman, dan makanan ringan yang cocok
+                    untuk menemani waktu santai Anda.</p>
+                <a href="#products" class="hero-button fade-in-up delay-3">Lihat Menu</a>
+            </article>
+        </section>
+
+        <section class="category-section" id="categories">
+            <article class="container">
+                <p class="section-label text-center">PILIHAN MENU</p>
+                <h2 class="text-center">Kategori</h2>
+                <ul class="category-list justify-content-center">
+                    <li><a href="#coffee" class="category-btn active">Coffee</a></li>
+                    <li><a href="#noncoffee" class="category-btn">Non Coffee</a></li>
+                    <li><a href="#food" class="category-btn">Food</a></li>
+                    <li><a href="#snack" class="category-btn">Snack</a></li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="product-section" id="products">
+            <article class="container">
+                <header class="section-heading">
+                    <p class="section-label">MENU</p>
+                    <h2>Favorit Pelanggan</h2>
+                    <p>Beberapa menu yang paling sering dipesan di Kopi MasaLalu.</p>
+                </header>
+
+                <section class="row g-4">
+
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" id="coffee" data-id="1"
+                        data-name="Cappuccino" data-price="25000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="capucino.jpeg" alt="Cappuccino" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Coffee</p>
+                                <h3>Cappuccino</h3>
+                                <p class="product-description">Espresso dengan susu steamed dan foam lembut.</p>
+                                <p class="price">Rp25.000</p>
+                                <button class="product-btn" onclick="addToCart(1)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" data-id="2"
+                        data-name="MasaLalu Signature" data-price="28000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="creamy-aren-latte.png" alt="MasaLalu Signature" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Coffee</p>
+                                <h3>MasaLalu Signature</h3>
+                                <p class="product-description">Espresso pilihan berpadu dengan susu creamy dan caramel
+                                    yang manis serta buttery.</p>
+                                <p class="price">Rp28.000</p>
+                                <button class="product-btn" onclick="addToCart(2)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" id="noncoffee" data-id="3"
+                        data-name="Matcha Latte" data-price="28000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="matcha-latte.jpeg" alt="Matcha Latte" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Non Coffee</p>
+                                <h3>Matcha Latte</h3>
+                                <p class="product-description">Matcha premium dengan susu yang lembut dan creamy.</p>
+                                <p class="price">Rp28.000</p>
+                                <button class="product-btn" onclick="addToCart(3)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" data-id="4"
+                        data-name="Hot Chocolate" data-price="23000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="hot-chocolate.jpeg" alt="Hot Chocolate" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Non Coffee</p>
+                                <h3>Hot Chocolate</h3>
+                                <p class="product-description">Cokelat hangat dengan rasa manis dan creamy.</p>
+                                <p class="price">Rp23.000</p>
+                                <button class="product-btn" onclick="addToCart(4)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <!-- Product 5 -->
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" id="food" data-id="5"
+                        data-name="Salt Bread Garlic & Cheese" data-price="20000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="salt-bread.jpeg" alt="Salt Bread Garlic & Cheese" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Food</p>
+                                <h3>Salt Bread Garlic & Cheese</h3>
+                                <p class="product-description">Salt bread lembut dengan aroma garlic butter yang gurih
+                                    dan lelehan keju.</p>
+                                <p class="price">Rp20.000</p>
+                                <button class="product-btn" onclick="addToCart(5)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <!-- Product 6 -->
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" data-id="6"
+                        data-name="Butter Croissant" data-price="15000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="butter-croissant.jpeg" alt="Butter Croissant" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Food</p>
+                                <h3>Butter Croissant</h3>
+                                <p class="product-description">Croissant renyah dengan aroma butter yang khas.</p>
+                                <p class="price">Rp15.000</p>
+                                <button class="product-btn" onclick="addToCart(6)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <!-- Product 7 -->
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" id="snack" data-id="7"
+                        data-name="Fried Potato" data-price="25000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="fried-potato.jpeg" alt="Fried Potato" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Snack</p>
+                                <h3>Fried Potato</h3>
+                                <p class="product-description">Kentang goreng renyah dengan bagian dalam yang lembut dan
+                                    gurih.</p>
+                                <p class="price">Rp25.000</p>
+                                <button class="product-btn" onclick="addToCart(7)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                    <!-- Product 8 -->
+                    <article class="col-12 col-sm-6 col-md-4 col-xl-3 product-item" data-id="8"
+                        data-name="Rice with Salted Egg" data-price="38000">
+                        <section class="product-card">
+                            <figure>
+                                <img src="salted-egg.png" alt="Rice with Salted Egg" loading="lazy">
+                            </figure>
+                            <section class="product-info">
+                                <p class="product-category">Snack</p>
+                                <h3>Rice with Salted Egg</h3>
+                                <p class="product-description">Potongan ayam lembut dengan saus salted egg curry yang
+                                    creamy dan gurih.</p>
+                                <p class="price">Rp38.000</p>
+                                <button class="product-btn" onclick="addToCart(8)">Pesan Sekarang</button>
+                            </section>
+                        </section>
+                    </article>
+
+                </section>
+            </article>
+        </section>
+
+        <section class="about-section" id="about">
+            <article class="container">
+                <p class="section-label">ABOUT US</p>
+                <h2>Tentang Kopi MasaLalu</h2>
+                <p>Kopi MasaLalu adalah coffee shop yang menyediakan berbagai pilihan kopi, minuman, makanan, dan snack.
+                    Kami menghadirkan tempat yang nyaman untuk menikmati kopi, belajar, bekerja, menghabiskan waktu
+                    bersama teman atau mungkin bersama MasaLalu kamu.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <section class="container">
+            <p>© 2026 Kopi MasaLalu.</p>
+        </section>
+    </footer>
+
+    <section class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <article class="modal-dialog modal-dialog-centered modal-lg">
+            <section class="modal-content">
+                <header class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">
+                        <i class="bi bi-cart3"></i> Keranjang Belanja
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </header>
+                <section class="modal-body">
+                    <section id="cartItems"></section>
+                    <section class="cart-empty" id="cartEmpty">
+                        <i class="bi bi-cart-x"></i>
+                        <p>Keranjang Anda masih kosong</p>
+                    </section>
+                </section>
+                <footer class="modal-footer">
+                    <section class="cart-summary">
+                        <p>Total: <strong id="cartTotal">Rp0</strong></p>
+                    </section>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" onclick="checkout()">Checkout</button>
+                </footer>
+            </section>
+        </article>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        const products = {
+            1: { name: 'Cappuccino', price: 25000 },
+            2: { name: 'MasaLalu Signature', price: 28000 },
+            3: { name: 'Matcha Latte', price: 28000 },
+            4: { name: 'Hot Chocolate', price: 23000 },
+            5: { name: 'Salt Bread Garlic & Cheese', price: 20000 },
+            6: { name: 'Butter Croissant', price: 15000 },
+            7: { name: 'Fried Potato', price: 25000 },
+            8: { name: 'Rice with Salted Egg', price: 38000 }
+        };
+
+        let cart = [];
+
+        // Fungsi: Tambah ke keranjang
+        function addToCart(id) {
+            const product = products[id];
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            showNotification(`${product.name} ditambahkan ke keranjang!`);
+        }
+
+        // Fungsi: Update tampilan keranjang
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartEmpty = document.getElementById('cartEmpty');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '';
+                cartEmpty.style.display = 'block';
+            } else {
+                cartEmpty.style.display = 'none';
+                let html = '<section class="cart-items-list">';
+
+                cart.forEach(item => {
+                    html += `
+                        <article class="cart-item">
+                            <section class="cart-item-info">
+                                <h6>${item.name}</h6>
+                                <p class="cart-item-price">Rp${item.price.toLocaleString('id-ID')}</p>
+                            </section>
+                            <section class="cart-item-quantity">
+                                <button class="qty-btn small" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="qty-btn small" onclick="updateQuantity(${item.id}, 1)">+</button>
+                            </section>
+                            <section class="cart-item-total">
+                                Rp${(item.price * item.quantity).toLocaleString('id-ID')}
+                            </section>
+                            <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </article>
+                    `;
+                });
+
+                html += '</section>';
+                cartItems.innerHTML = html;
+            }
+
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `Rp${totalPrice.toLocaleString('id-ID')}`;
+        }
+
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Keranjang masih kosong!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            alert(`Terima kasih telah memesan!\n\nTotal items: ${totalItems}\nTotal: Rp${total.toLocaleString('id-ID')}\n\nPesanan Anda sedang diproses `);
+
+            cart = [];
+            updateCartUI();
+
+            const modal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+            modal.hide();
+        }
+        function showNotification(message) {
+            const notification = document.createElement('section');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => notification.classList.add('show'), 100);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>
